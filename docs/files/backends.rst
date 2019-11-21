@@ -13,12 +13,12 @@ Configure your Storage Backend
 
 A storage backend serves as an interface for the underlying file access.
 
-In the `config.py` file of your application, you can use the variable
+In the ``config.py`` file of your application, you can use the variable
 `FILES_REST_STORAGE_FACTORY <https://invenio-files-rest.readthedocs.io/en/latest/configuration.html#invenio_files_rest.config.FILES_REST_STORAGE_FACTORY>`_
 to provide your custom factory that will be used to create the storage
 instance.
 
-The module provides an abstract layer for storage implementation that allows
+The module provides an abstraction layer for storage implementation that allows
 to swap storages easily. The default storage solution for saving files locally
 for Invenio-Files-REST is `PyFilesystem <https://www.pyfilesystem.org/>`_,
 which can be replaced according to your needs even with a cloud
@@ -29,9 +29,9 @@ offers integration with any S3 REST API compatible object storage.
 Build your own Storage Backend
 ------------------------------
 
-If you would like to provide your own implementation as a storage backend, it
-is requires to subclass the `FileStorage <https://invenio-files-rest.readthedocs.io/en/latest/api.html#invenio_files_rest.ext.FileStorage>`_
-class, and implement for some of its core methods.
+If you would like to provide your own implementation of a storage backend, it
+is required to subclass the `FileStorage <https://invenio-files-rest.readthedocs.io/en/latest/api.html#invenio_files_rest.storage.FileStorage>`_
+class, and implement some of its core methods.
 
 The following methods are required to be implemented for the storage to work:
 
@@ -41,8 +41,8 @@ The following methods are required to be implemented for the storage to work:
 * :code:`update`
 * :code:`delete`
 
-The base class provides also some optional methods to implement to extend the
-existing functionality:
+The base class provides also some optional methods to extend existing
+functionality:
 
 * :code:`send_file`
 * :code:`checksum`

@@ -9,7 +9,7 @@ Handling Files
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    integration
    backends

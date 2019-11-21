@@ -19,12 +19,12 @@ In case you have scaffolded your invenio application with
 files bundle is already a part of your solution, the only step you need to
 take is to enable them through configuration.
 
-In case you want all the modules automatically installed you can navigate to
-your project and with your virtual environment selected you can
+In case you want all the file related modules automatically installed you can
+navigate to your project and with your virtual environment selected you can
 
 .. code-block:: console
 
-   $ pip install invenio[auth]
+   $ pip install invenio[files]
 
 
 Files bundle
@@ -50,7 +50,7 @@ and retrieve files in a similar way to Amazon S3 APIs.
 - File integrity monitoring
 - Customizable access control
 
-After you install the module on your environment you just have to register
+After you install the module in your environment you just have to register
 the invenio-files-rest blueprint in the list of blueprints defined in the
 :code:`entry_points` of the :code:`setup.py` of your application.
 
@@ -95,6 +95,10 @@ endpoints you want to use, it should be in the following form
             '<endpoint-prefix>': '<endpoint-suffix>',
         }
     }
+
+You will also have to configure the permissions for the endpoints under the
+`FILES_REST_PERMISSION_FACTORY <https://invenio-files-rest.readthedocs.io/en/latest/configuration.html#invenio_files_rest.config.FILES_REST_PERMISSION_FACTORY>`__
+configuration variable of the :code:`invenio-files-rest` module.
 
 Read more about `configuration <https://invenio-records-files.readthedocs.io/en/latest/configuration.html>`__
 and `usage <https://invenio-records-files.readthedocs.io/en/latest/usage.html>`__
